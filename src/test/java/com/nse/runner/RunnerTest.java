@@ -12,7 +12,6 @@ import io.cucumber.junit.CucumberOptions;
 		,monochrome = true
 		)
 
-
 @RunWith(Cucumber.class)
 public class RunnerTest {
 
