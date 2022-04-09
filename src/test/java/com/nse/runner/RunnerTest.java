@@ -12,7 +12,10 @@ import io.cucumber.junit.CucumberOptions;
 		,monochrome = true
 		,plugin = {"pretty","html:target/index.html"}
 		//,dryRun = true
-		,tags = "@valid"
+		//,tags = "@invalid and @login"
+		//,tags = "not @invalid"
+		//,tags="@valid or @invalid"
+		,tags="@invalid"
 		)
 
 @RunWith(Cucumber.class)

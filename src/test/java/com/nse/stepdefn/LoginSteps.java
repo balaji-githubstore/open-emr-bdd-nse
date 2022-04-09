@@ -22,7 +22,7 @@ public class LoginSteps {
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://demo.openemr.io/b/openemr");
 		
 	}
