@@ -22,7 +22,7 @@ public class LoginSteps {
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 		driver.get("https://demo.openemr.io/b/openemr");
 		
 	}
@@ -54,6 +54,14 @@ public class LoginSteps {
 		
 		driver.quit();
 	}
+	
+	@Then("I should get error message as {string}")
+	public void i_should_get_error_message_as(String expectedError) {
+		
+		String actualError=driver.findElement(By.xpath("//*[contains(text(),'Invalid')]")).getText();
+	    Assert.assertEquals(expectedError, actualError);
+	}
+
 
 
 }

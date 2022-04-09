@@ -10,6 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 		,glue = {"com.nse.stepdefn"}
 		,publish = true
 		,monochrome = true
+		,plugin = {"pretty","html:target/index.html"}
+		//,dryRun = true
+		,tags = "@valid"
 		)
 
 @RunWith(Cucumber.class)
