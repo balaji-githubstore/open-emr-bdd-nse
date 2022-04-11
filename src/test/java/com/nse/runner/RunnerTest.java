@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(
 		features = {"src/test/resources/feature/Login.feature"}
-		,glue = {"com.nse.stepdefn"}
+		,glue = {"com.nse.stepdefn","com.nse.base"}
 		,publish = true
 		,monochrome = true
 		,plugin = {"pretty","html:target/index.html"}
