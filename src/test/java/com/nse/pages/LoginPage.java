@@ -10,6 +10,7 @@ public class LoginPage {
 	private static By passwordLocator = By.cssSelector("#clearPass");
 	private static By languageLocator = By.xpath("//select[@name='languageChoice']");
 	private static By loginLocator = By.id("login-button");
+	private static By errorLocator=By.xpath("//*[contains(text(),'Invalid')]");
 
 	public static void enterUsername(String username) {
 		WebDriverWrapper.driver.findElement(usernameLocator).sendKeys(username);
@@ -26,5 +27,10 @@ public class LoginPage {
 
 	public static void clickOnLogin() {
 		WebDriverWrapper.driver.findElement(loginLocator).click();
+	}
+
+	public static String getInvalidErrorMessage() {
+		String text = WebDriverWrapper.driver.findElement(errorLocator).getText();
+		return text;
 	}
 }

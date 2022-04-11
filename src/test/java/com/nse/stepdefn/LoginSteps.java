@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.nse.base.WebDriverWrapper;
 import com.nse.pages.LoginPage;
+import com.nse.pages.MainPage;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -55,14 +56,14 @@ public class LoginSteps {
 	@Then("I should get access to the portal with title as {string}")
 	public void i_should_get_access_to_the_portal_with_title_as(String expectedTitle) {
 		// wait for page load
-		Assert.assertEquals(expectedTitle, WebDriverWrapper.driver.getTitle());
+		Assert.assertEquals(expectedTitle, MainPage.getDashboardPageTitle());
 
 	}
 
 	@Then("I should get error message as {string}")
 	public void i_should_get_error_message_as(String expectedError) {
 
-		String actualError = WebDriverWrapper.driver.findElement(By.xpath("//*[contains(text(),'Invalid')]")).getText();
+		String actualError = LoginPage.getInvalidErrorMessage();
 		Assert.assertEquals(expectedError, actualError);
 	}
 
