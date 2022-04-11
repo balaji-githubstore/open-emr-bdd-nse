@@ -43,9 +43,7 @@ public class LoginSteps {
 
 	@When("I select language as {string}")
 	public void i_select_language_as(String language) {
-
 		LoginPage.selectLanguageByText(language);
-
 	}
 
 	@When("I click on login")
