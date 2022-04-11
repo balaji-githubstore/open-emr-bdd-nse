@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 import com.nse.base.WebDriverWrapper;
 
 public class MainPage {
-	private static By patientLocator=By.xpath("//*[contains(text(),'Patient')]");
-	private static By newSearchLocator=By.xpath("//*[contains(text(),'New/Se')]");
+	private static By patientLocator=By.xpath("//div[text()='Patient']");
+	private static By newSearchLocator=By.xpath("//div[text()='New/Search']");
 	
 	public static String getDashboardPageTitle()
 	{

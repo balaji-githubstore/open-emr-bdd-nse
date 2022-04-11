@@ -8,6 +8,7 @@ public class WebDriverWrapper {
 	
 	public static WebDriver driver;
 	
+	
 	//run after each scenario
 	@After
 	public void endScenarion()

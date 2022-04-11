@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(
-		features = {"src/test/resources/feature/Login.feature"}
+		features = {"src/test/resources/feature"}
 		,glue = {"com.nse.stepdefn","com.nse.base"}
 		,publish = true
 		,monochrome = true
@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
 		//,tags = "@invalid and @login"
 		//,tags = "not @invalid"
 		//,tags="@valid or @invalid"
-		//,tags="@invalid"
+		,tags="@patient"
 		)
 
 @RunWith(Cucumber.class)
