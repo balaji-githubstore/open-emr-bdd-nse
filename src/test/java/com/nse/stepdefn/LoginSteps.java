@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import com.nse.base.WebDriverWrapper;
+import com.nse.pages.LoginPage;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -31,28 +32,24 @@ public class LoginSteps {
 
 	@When("I enter username as {string}")
 	public void i_enter_username_as(String username) {
-
-		WebDriverWrapper.driver.findElement(By.cssSelector("#authUser")).sendKeys(username);
-
+		LoginPage.enterUsername(username);
 	}
 
 	@When("I enter password as {string}")
 	public void i_enter_password_as(String password) {
-		WebDriverWrapper.driver.findElement(By.cssSelector("#clearPass")).sendKeys(password);
+		LoginPage.enterPassword(password);
 	}
 
 	@When("I select language as {string}")
 	public void i_select_language_as(String language) {
 
-		Select selectLan = new Select(
-				WebDriverWrapper.driver.findElement(By.xpath("//select[@name='languageChoice']")));
-		selectLan.selectByVisibleText(language);
+		LoginPage.selectLanguageByText(language);
 
 	}
 
 	@When("I click on login")
 	public void i_click_on_login() {
-		WebDriverWrapper.driver.findElement(By.id("login-button")).click();
+		LoginPage.clickOnLogin();
 	}
 
 	@Then("I should get access to the portal with title as {string}")
