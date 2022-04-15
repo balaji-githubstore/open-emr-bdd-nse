@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		,publish = true
 		,monochrome = true
 		,plugin = {"pretty","html:target/index.html"}
-		//,dryRun = true
+//		,dryRun = true
 		//,tags = "@invalid and @login"
 		//,tags = "not @invalid"
 		//,tags="@valid or @invalid"

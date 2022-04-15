@@ -15,11 +15,11 @@ Feature: Patient
     And I click on new-search
     And I fill the form
       | firstname | lastname | gender | dob        |
-      | John      | Wick     | Male   | 2022-04-11 |
+      | John      | Wick     | Male   | 2022-04-15 |
     And I click on create new patient
     And I click on confirm create new patient
     And I handle the alertbox
     And I click on close happy birthday popup if shown
-    Then I should see the alert text contains 'Assessment:Tobacco'
+    Then I should see the alert text contains 'Tobacco'
     And I should see the added patient details as 'Medical Record Dashboard - John Wick'
 
