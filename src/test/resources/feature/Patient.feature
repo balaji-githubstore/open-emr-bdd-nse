@@ -5,7 +5,7 @@ Feature: Patient
   I would like access to the portal and modfiy records
 
   @addpatient
-  Scenario: Add Patient1
+  Scenario Outline: Add Patient
     Given I have browser with open emr page
     When I enter username as 'admin'
     And I enter password as 'pass'
@@ -14,12 +14,16 @@ Feature: Patient
     And I click on patient
     And I click on new-search
     And I fill the form
-      | firstname | lastname | gender | dob        |
-      | John      | Wick     | Male   | 2022-04-15 |
+      | firstname   | lastname   | gender   | dob   |
+      | <firstname> | <lastname> | <gender> | <dob> |
     And I click on create new patient
     And I click on confirm create new patient
     And I handle the alertbox
     And I click on close happy birthday popup if shown
-    Then I should see the alert text contains 'Tobacco'
-    And I should see the added patient details as 'Medical Record Dashboard - John Wick'
+    Then I should see the alert text contains '<expectedalertext>'
+    And I should see the added patient details as '<expectedpatientname>'
 
+    Examples: 
+      | firstname | lastname | dob        | gender | expectedalertext | expectedpatientname                  |
+      | John      | Wick     | 2022-04-15 | Male   | Tobacco          | Medical Record Dashboard - John Wick |
+      | Paul      | Peter    | 2022-04-12 | Male   | Tobacco          | Medical Record Dashboard - Peter Paul |
