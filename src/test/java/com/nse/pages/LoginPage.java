@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class LoginPage {
+import com.nse.base.WebDriverKeywords;
+
+public class LoginPage extends WebDriverKeywords {
 	private By usernameLocator = By.cssSelector("#authUser");
 	private By passwordLocator = By.cssSelector("#clearPass");
 	private By languageLocator = By.xpath("//select[@name='languageChoice']");
@@ -14,25 +16,25 @@ public class LoginPage {
 	private WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 	
 	
 	public void enterUsername(String username) {
-		driver.findElement(usernameLocator).sendKeys(username);
+		typeOnElement(usernameLocator, username);
 	}
 
 	public void enterPassword(String password) {
-		driver.findElement(passwordLocator).sendKeys(password);
+		typeOnElement(passwordLocator, password);
 	}
 
 	public void selectLanguageByText(String languageText) {
-		Select selectLan = new Select(driver.findElement(languageLocator));
-		selectLan.selectByVisibleText(languageText);
+		selectDropdownByText(languageLocator,languageText);
 	}
 
 	public void clickOnLogin() {
-		driver.findElement(loginLocator).click();
+		clickOnElement(loginLocator);
 	}
 
 	public String getInvalidErrorMessage() {

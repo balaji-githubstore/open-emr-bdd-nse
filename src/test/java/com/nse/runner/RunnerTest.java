@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
 		//,tags = "@invalid and @login"
 		//,tags = "not @invalid"
 		//,tags="@valid or @invalid"
-		,tags="@patient"
+		,tags="@invalid"
 		)
 
 @RunWith(Cucumber.class)
