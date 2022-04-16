@@ -11,9 +11,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginSteps {
-	LoginPage login;
-	MainPage main;
-	WebDriverWrapper wrapper;
+	
+	private WebDriverWrapper wrapper;
+	
+	private LoginPage login;
+	private MainPage main;
+	
 	public LoginSteps(WebDriverWrapper wrapper) {
 		this.wrapper = wrapper;
 	}

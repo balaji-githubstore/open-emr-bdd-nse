@@ -24,6 +24,6 @@ Feature: Patient
     And I should see the added patient details as '<expectedpatientname>'
 
     Examples: 
-      | firstname | lastname | dob        | gender | expectedalertext | expectedpatientname                  |
-      | John      | Wick     | 2022-04-15 | Male   | Tobacco          | Medical Record Dashboard - John Wick |
-      | Paul      | Peter    | 2022-04-12 | Male   | Tobacco          | Medical Record Dashboard - Peter Paul |
+      | firstname | lastname | dob        | gender | expectedalertext | expectedpatientname                   |
+      | John      | Wick     | 2022-04-15 | Male   | Tobacco          | Medical Record Dashboard - John Wick  |
+      | Peter     | Paul     | 2022-04-12 | Male   | Tobacco          | Medical Record Dashboard - Peter Paul |
